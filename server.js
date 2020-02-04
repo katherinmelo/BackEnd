@@ -5,9 +5,9 @@ const mysql = require('mysql')
 const util = require('util')
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'applicationuser',
-  password: process.env.DB_PASS || 'applicationuser',
+  host: process.env.DB_HOST || 'mysqlru.mysql.database.azure.com',
+  user: process.env.DB_USER || 'kmelo@mysqlru',
+  password: process.env.DB_PASS || 'Querube.48',
   database: process.env.DB_NAME || 'movie_db'
 })
 pool.query = util.promisify(pool.query)
