@@ -43,8 +43,9 @@ stages:
     pool:
       vmImageName: 'ubuntu-latest'
 
-    container: katherinmelobackend:lastest
-
+    container:
+      image: rampupacr.azurecr.io/katherinmelobackend:lastest
+      endpoint: ACRrampup
     steps:
     - script: node test.js
       displayName: Run tests
