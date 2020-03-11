@@ -1,4 +1,5 @@
 # Docker
+
 # Build and push an image to Azure Container Registry
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -10,10 +11,10 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'd0f6ad3d-5dcf-4b96-aa61-9b7cdcb07667'
-  imageRepository: 'moviesback'
-  containerRegistry: 'holiwiii.azurecr.io'
-  dockerfilePath: 'Dockerfile'
+  dockerRegistryServiceConnection: 'ACRrampup'
+  imageRepository: 'katherinmelobackend'
+  containerRegistry: 'rampupacr.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
   
   # Agent VM image name
@@ -37,3 +38,16 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
+  - job: Test
+    dependsOn: Build
+    pool:
+      vmImageName: 'ubuntu-latest'
+
+    container:
+      image: rampupacr.azurecr.io/katherinmelobackend:$(tag)
+      endpoint: ACRrampup
+    steps:
+    - script: pwd
+      displayName: Run tests
+
