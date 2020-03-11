@@ -42,8 +42,8 @@ stages:
     pool:
     container: 
       image: $(vmImageName)
-      name: llorar
-      steps:
-      - script: node test.js
-        displayName: Run tests
+
+    steps:
+    - script: node test.js
+      displayName: Run tests
 
