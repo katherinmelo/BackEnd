@@ -40,7 +40,7 @@ stages:
           $(tag)
   - job: MyJob
     pool:
-      vmImage: $(vmImageName)
+      vmImage: 'katherinmelobackend'
       
     container:
       image: $(vmImageName)
