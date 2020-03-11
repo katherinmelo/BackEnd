@@ -40,7 +40,7 @@ stages:
           $(tag)
   - job: MyJob
     pool:
-      vmImage: 'katherinmelobackend'
+      vmImage: rampupacr.azurecr.io/katherinmelobackend:lastest
       
     container:
       image: $(vmImageName)
