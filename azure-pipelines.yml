@@ -43,7 +43,7 @@ stages:
     pool:
       vmImageName: 'ubuntu-latest'
 
-    container: rampupacr.azurecr.io/katherinmelobackend:lastest
+    container: katherinmelobackend:lastest
 
     steps:
     - script: node test.js
