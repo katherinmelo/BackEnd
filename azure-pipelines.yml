@@ -39,7 +39,8 @@ stages:
         tags: |
           $(tag)
 
-  - job: MyJob
+  - job: Test
+    dependsOn: Build
     pool:
       vmImageName: 'ubuntu-latest'
 
