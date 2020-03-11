@@ -48,6 +48,6 @@ stages:
       image: rampupacr.azurecr.io/katherinmelobackend:$(tag)
       endpoint: ACRrampup
     steps:
-    - script: node test.js
+    - script: ls
       displayName: Run tests
 
