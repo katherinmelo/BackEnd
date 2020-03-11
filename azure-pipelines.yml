@@ -41,6 +41,8 @@ stages:
 
   - job: MyJob
     pool:
+      vmImageName: 'ubuntu-latest'
+
     container: rampupacr.azurecr.io/katherinmelobackend:lastest
 
     steps:
