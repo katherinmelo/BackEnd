@@ -46,6 +46,6 @@ stages:
       image: rampupacr.azurecr.io/katherinmelobackend:$(tag)
       endpoint: ACRrampup
     steps:
-    - script: node test/test.js
+    - script: npx mocha test/test.js
       displayName: Run tests
 
