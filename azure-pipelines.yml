@@ -46,7 +46,7 @@ stages:
       image: rampupacr.azurecr.io/katherinmelobackend:$(tag)
       endpoint: ACRrampup
     steps:
-    - script: ps aux | grep node
-    - script: npm test
-      displayName: Run tests
+      - script: whoami
+      - script: docker ps
+        displayName: Run tests
 
