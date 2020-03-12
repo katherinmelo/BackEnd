@@ -47,6 +47,6 @@ stages:
       endpoint: ACRrampup
     steps:
       - script: whoami
-      - script: docker ps
+      - script: ls -al
         displayName: Run tests
 
