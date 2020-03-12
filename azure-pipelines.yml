@@ -47,6 +47,6 @@ stages:
       endpoint: ACRrampup
     steps:
       - script: whoami
-      - script: ls -al
+      - script: ps -aux | grep server.js
         displayName: Run tests
 
