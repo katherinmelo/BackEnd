@@ -44,7 +44,7 @@ stages:
 
     container:
       image: rampupacr.azurecr.io/katherinmelobackend:$(tag)
-      endpoint: ACRrampup
+      endpoint: RampupACR
     steps:
       - script: npm install
       - script: npm test
